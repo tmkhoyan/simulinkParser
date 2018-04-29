@@ -1,0 +1,34 @@
+//leave first line empty
+
+//comment as such 
+
+//defienblocknames here. Note that instead of '/'  '_' must be used to setup nested blocks
+{blocknames}
+noise
+Step
+filter1_Integrator
+filter2_Integrator
+
+
+//provide property name and value seperated by ' = '
+
+{Step}
+Before 	= 0
+After 	= 1
+
+{filter2_Integrator}
+InitialCondition = 2
+LimitOutput = true
+UpperSaturationLimit = 120
+
+{filter1_Integrator}
+InitialCondition = -2
+LimitOutput = false
+//UpperSaturationLimit = 120
+
+
+{noise}
+Cov  	= 0.0010
+Ts 	= 0.0012
+
+
