@@ -33,7 +33,6 @@ else
                 elseif strcmpi(opt.(blockfieldnames{k}){m}{2},'true')
                     opt.(blockfieldnames{k}){m}{2} = 1;
                 end
-                
                 set_param([basepath blockpaths{k}],opt.(blockfieldnames{k}){m}{1},opt.(blockfieldnames{k}){m}{2});
             catch
                 %warnstr = sprintf('Parameter not set. Block ''%s'' does not have a parameter named ''%s''', blockpaths{k}, opt.(blockfieldnames{k}){m}{1});
