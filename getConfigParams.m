@@ -1,4 +1,9 @@
 function [s] = getConfigParams(varargin)
+% part of Config parser for ASCII based files for simulink
+
+%   Author: Tigran Mkhoyan
+%   Delft University of Technology, 2018
+
 basepath = [];
 level = [];
 saveopt = [];
