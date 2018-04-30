@@ -36,7 +36,7 @@ LimitOutput = false
 {const}
 c1	= 0.01 
 c2	= 0.045
-c3	= 0.02
+c3	= 0.021
 
 {noise}
 Cov  	= 0.0010
