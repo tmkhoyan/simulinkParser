@@ -2,13 +2,14 @@
 
 //comment as such 
 
-//defienblocknames here. Note that instead of '/'  '_' must be used to setup nested blocks
+//defienblocknames here. Note that both '/'  ‘__’ can be used to indicate nested blocks
 {blocknames}
 noise
 Step
-filter1_Integrator
-filter2_Integrator
-
+filter1/Integrator
+filter2/Integrator
+filter3/transferfcn
+const
 
 //provide property name and value seperated by ' = '
 
@@ -16,16 +17,26 @@ filter2_Integrator
 Before 	= 0
 After 	= 1
 
-{filter2_Integrator}
-InitialCondition = 2
-LimitOutput = true
-UpperSaturationLimit = 120
+// ‘/’ is automatically replaced by readconfig to ‘__’. This option can be controlled using readConfig(…,'structnamefieldfillelemn', [desired fillelement],…)
 
-{filter1_Integrator}
+{filter3/transferfcn} 
+Numerator = [1]
+Denominator = [1 2]
+
+{filter2/Integrator}
 InitialCondition = -2
 LimitOutput = false
 //UpperSaturationLimit = 120
 
+{filter1/Integrator}
+InitialCondition = 2
+LimitOutput = false
+//UpperSaturationLimit = 120
+
+{const}
+c1	= 0.01 
+c2	= 0.045
+c3	= 0.02
 
 {noise}
 Cov  	= 0.0010
