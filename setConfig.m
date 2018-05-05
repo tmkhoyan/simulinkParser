@@ -47,7 +47,6 @@ else
 end
 
 
-
    function setOptargs
         numvarargs  = length(varargin);
         
@@ -67,6 +66,7 @@ end
         end
    end
 
+disp('Done.')
 return; 
 end 
 
