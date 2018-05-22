@@ -10,9 +10,9 @@ saveopt = [];
 
 setOptargs;
 
-cpaths = regexp(basepath,'/','split');
-
-basepath = cpaths{1};
+%fix not needed to get the root path 
+%cpaths = regexp(basepath,'/','split');
+%basepath = cpaths{1};
 
 objNamesFull = find_system(basepath, 'LookUnderMasks', 'all'); 
 
