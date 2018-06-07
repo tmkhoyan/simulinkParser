@@ -19,6 +19,7 @@ opt = readConfig(filename,'structnamefieldfillelemn', '__');
 %
 if isfield(opt,'blocknames')
 if ischar(opt.blocknames)
+    %TODO: fix issue with only one field
     % first element in opt.('blockname') is propertyname second is value
     % opt.blocknames){k}{1} and opt.blocknames{k}{2}
      set_param([basepath opt.blocknames],opt.(opt.blocknames){1}{1},opt.(opt.blocknames{1}){1}{2});
@@ -43,7 +44,7 @@ else
 end
 
 else 
-    error('Simulink blocknames notdefined in config. Please provide the correct config file')
+    error('Simulink blocknames not defined in config. Please provide the correct config file')
 end
 
 
