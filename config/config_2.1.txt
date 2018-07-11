@@ -1,0 +1,55 @@
+//leave first line empty
+
+//comment as such 
+
+//defienblocknames here. Note that both '/'  ‘__’ can be used to indicate nested blocks
+{blocknames}
+noise
+Step
+filter1/Integrator
+filter2/Integrator
+filter3/transferfcn
+const
+const2
+
+//provide property name and value seperated by ' = '
+
+{Step}
+Before 	= 0
+After 	= 1
+
+// ‘/’ is automatically replaced by readconfig to ‘__’. This option can be controlled using readConfig(…,'structnamefieldfillelemn', [desired fillelement],…)
+
+{filter3/transferfcn} 
+Numerator = [1]
+Denominator = [1 2]
+
+{filter2/Integrator}
+InitialCondition = -2
+LimitOutput = false
+//UpperSaturationLimit = 120
+
+{filter1/Integrator}
+InitialCondition = 2
+LimitOutput = false
+//UpperSaturationLimit = 120
+
+//parameters of noise block an now be set with any constants defined in config
+{noise}
+Cov  	= @ k1
+Ts 	= @ c1/10+0.0002
+
+//note the recursive relationship in c3 with k1. This parameter is resolved as long as k1 has explicit definition anywhere in th config.
+{const}
+c1	= 0.01 
+c2	= @ c1 + 0.045
+c3	= @ k1 + 0.012/2
+
+//demonstrates that parameters are passed globally
+{const2}
+k1  = @ c1*2 
+k2  = @ c1/2+100
+k3  = 11.2
+
+
+
