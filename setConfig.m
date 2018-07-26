@@ -19,10 +19,11 @@ opt = readConfig(filename,'structnamefieldfillelemn', '__');
 %
 if isfield(opt,'blocknames')
 if ischar(opt.blocknames)
-    %TODO: fix issue with only one field
+    %TODO: fix issue with only one field is fixed test to see if works!
     % first element in opt.('blockname') is propertyname second is value
     % opt.blocknames){k}{1} and opt.blocknames{k}{2}
-     set_param([basepath opt.blocknames],opt.(opt.blocknames){1}{1},opt.(opt.blocknames{1}){1}{2});
+     %set_param([basepath opt.blocknames],opt.(opt.blocknames){1}{1},opt.(opt.blocknames{1}){1}{2}); % previous code removed indexing check if works
+     set_param([basepath,'/', opt.blocknames],opt.(opt.blocknames){1}{1},opt.(opt.blocknames){1}{2});
 else
     blockfieldnames = regexprep(opt.blocknames,'/',delimiter); %check if bloknames contain / recplace by '--' to access the struct fieldnames stored by readConfig
     blockpaths = strcat('/',regexprep(opt.blocknames,delimiter,'/')); % default delimiter is '__'
