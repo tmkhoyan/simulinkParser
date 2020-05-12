@@ -65,7 +65,7 @@ Time = 0
 
 ##  References
 Please use the following DOI to cite cvyamlParser: 
-[![DOI](https://zenodo.org/badge/184505001.svg)](https://zenodo.org/badge/latestdoi/184505001)
+[![DOI](https://zenodo.org/badge/3820927.svg)](https://zenodo.org/badge/latestdoi/3820927)
 
 ## Licence 
 Please refer to the licence file for information about code distribution, usage and copy rights. The code is provided under MIT License. 
