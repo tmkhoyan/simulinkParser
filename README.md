@@ -46,14 +46,15 @@ k3 = 11.2
 How to query the dialogparameter names:
 Make sure that you active window is the current simulink block diagram. (simply select any block inside your simulink file). getConfigParams will then generate the structure of nested blocks and blocknames and provide you with the table containing the blocks. You can then access the block properties and find the appropriate dialogparameter variable by indexing the structure dialogParam{index}. getConfigParams can query to desired nested depth (e.g. to query 3 levels deep use getConfigParams(3). If the input depth is higher than maximum depth getConfigParams will retain the maximum depth of the diagram). Example:
 
-In the example file, to query dialogparameters of 'step' block. First do s = getConfigParams. Search in the table for step[index] and its corresponding index. s.dialogParam{index} gives: -->
+In the example file, to query dialogparameters of 'step' block. First do s = getConfigParams. Search in the table for step[index] and its corresponding index. s.dialogParam{index} gives:
+```Matlab
 Time: [1×1 struct] --> corresponds to prompt 'Step time'
 Before: [1×1 struct] --> corresponds to prompt 'initial value'
 After: [1×1 struct] --> corresponds to prompt 'Final value'
 SampleTime: [1×1 struct]
 VectorParams1D: [1×1 struct]
 ZeroCross: [1×1 struct]
-----
+```
 Now parameters can be set using dialogparameter names (order is irrelevant):
 ```Matlab
 {step}
